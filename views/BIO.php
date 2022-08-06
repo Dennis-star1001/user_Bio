@@ -65,7 +65,7 @@
  
         <br>
 
-        <button type="submit" name="submit" class='submit_btn'>Save</button>
+        <button type="submit" name="submit" class='submit_btn' >Save</button>
     
     </form>
     </div>
