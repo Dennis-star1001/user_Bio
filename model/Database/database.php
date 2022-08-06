@@ -46,5 +46,6 @@ class Database
     public function lookUp($fields ="*", $table, $condition = "", $column){
         $con =  empty($condition) ?  "" : " WHERE $condition";
         return $this->sql("SELECT $fields FROM $table $con");
+        
     }
 }
