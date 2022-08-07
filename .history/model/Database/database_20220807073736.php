@@ -57,13 +57,12 @@ class Database
     }
 
 
-    public function saveChanges($table, $sql, $condition)
+    public function saveChanges($table,$sql,$condition)
     {
         return $this->sql("UPDATE $table SET $sql WHERE $condition");
     }
 
-    public function erase($table, $condition)
-    {
-        return $this->sql("DELETE FROM $table WHERE $condition");
+    public function erase(){
+        
     }
 }

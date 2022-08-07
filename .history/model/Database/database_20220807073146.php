@@ -41,7 +41,8 @@ class Database
 
     public function numRows()
     {
-        return  $this->numOfResult;
+        return $val = $this->numOfResult;
+
     }
 
     //CRUD methods
@@ -56,14 +57,7 @@ class Database
         return $this->sql("SELECT $fields FROM $table $con");
     }
 
-
-    public function saveChanges($table, $sql, $condition)
+    public function saveChanges()
     {
-        return $this->sql("UPDATE $table SET $sql WHERE $condition");
-    }
-
-    public function erase($table, $condition)
-    {
-        return $this->sql("DELETE FROM $table WHERE $condition");
     }
 }

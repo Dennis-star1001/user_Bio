@@ -56,14 +56,7 @@ class Database
         return $this->sql("SELECT $fields FROM $table $con");
     }
 
-
-    public function saveChanges($table, $sql, $condition)
+    public function saveChanges()
     {
-        return $this->sql("UPDATE $table SET $sql WHERE $condition");
-    }
-
-    public function erase($table, $condition)
-    {
-        return $this->sql("DELETE FROM $table WHERE $condition");
     }
 }

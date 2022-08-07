@@ -64,6 +64,6 @@ class Database
 
     public function erase($table, $condition)
     {
-        return $this->sql("DELETE FROM $table WHERE $condition");
+        return $this->sql("DELETE ");
     }
 }

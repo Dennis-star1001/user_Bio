@@ -28,7 +28,7 @@ class Database
     public function sql($sql)
     {
         $query = $this->myConn->query($sql);
-        $this->numOfResult = @$query->num_rows;
+        $this->numOfResult = @query->num_row
         $this->myQuery = $sql;
     }
 
@@ -39,31 +39,23 @@ class Database
         echo $my_Sql;
     }
 
-    public function numRows()
-    {
-        return  $this->numOfResult;
+    public function numRows(){
+
     }
 
-    //CRUD methods
+//CRUD methods
     public function save($table, $sql)
     {
         return $this->sql("INSERT INTO $table SET $sql");
     }
 
-    public function lookUp($fields = "*", $table, $condition = "", $column)
-    {
+    public function lookUp($fields ="*", $table, $condition = "", $column){
         $con =  empty($condition) ?  "" : " WHERE $condition";
         return $this->sql("SELECT $fields FROM $table $con");
+        
     }
 
+    public function saveChanges(){
 
-    public function saveChanges($table, $sql, $condition)
-    {
-        return $this->sql("UPDATE $table SET $sql WHERE $condition");
-    }
-
-    public function erase($table, $condition)
-    {
-        return $this->sql("DELETE FROM $table WHERE $condition");
     }
 }
