@@ -62,8 +62,7 @@ class Database
 
     public function getResult(){
         $val = $this->result;
-        $this->result = array();
-        return $val;
+        $this->result = 
     }
 
     public function numRows()
@@ -81,18 +80,7 @@ class Database
     {
         $con =  empty($condition) ?  "" : " WHERE $condition";
         return $this->sql("SELECT $fields FROM $table $con");
-        $result = $this->getResult();
-        if(!empty($result)){
-            if(is_object($result) || is_array($result)){
-                if(!empty($column)){
-                    if(!empty($result[0][$column])){
-                        return $result[0][$column];
-                    }else{
-                        return $result;
-                    }
-                }
-            }
-        }
+        $result = 
     }
 
 

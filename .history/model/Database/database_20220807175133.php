@@ -12,7 +12,6 @@ class Database
     private $conn = false;
     private $myQuery = "";
     private $numOfResult = "";
-    private $result = [];
 
     function __construct()
     {
@@ -46,10 +45,6 @@ class Database
                     }
                 }
             }
-            return true;
-        }else{
-            array_push($this->result, $this->myConn->error);
-            return false;
         }
     }
 
@@ -58,12 +53,6 @@ class Database
     {
         $my_Sql = $this->myQuery;
         echo $my_Sql;
-    }
-
-    public function getResult(){
-        $val = $this->result;
-        $this->result = array();
-        return $val;
     }
 
     public function numRows()
@@ -81,18 +70,6 @@ class Database
     {
         $con =  empty($condition) ?  "" : " WHERE $condition";
         return $this->sql("SELECT $fields FROM $table $con");
-        $result = $this->getResult();
-        if(!empty($result)){
-            if(is_object($result) || is_array($result)){
-                if(!empty($column)){
-                    if(!empty($result[0][$column])){
-                        return $result[0][$column];
-                    }else{
-                        return $result;
-                    }
-                }
-            }
-        }
     }
 
 

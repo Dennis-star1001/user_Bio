@@ -10,9 +10,7 @@ class User{
     public $phoneNumber;
 
 
-    public function userBio(){
-        
-    }
+    
 
 
 }
