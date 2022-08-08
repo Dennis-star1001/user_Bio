@@ -77,9 +77,9 @@ class Database
         return $this->sql("INSERT INTO $table SET $sql");
     }
 
-    public function lookUp($fields = "*", $table, $condition = "", $column)
+    public function lookUp( $table, $fields = "*", $condition = "", $column = "")
     {
-        $con =  empty($condition) ?  "" : " WHERE $condition";
+        $con = !empty($condition) ? " WHERE $condition" : "";
         return $this->sql("SELECT $fields FROM $table $con");
         $result = $this->getResult();
         if(!empty($result)){
