@@ -10,13 +10,25 @@ class commonFunc
     }
 
 
-    public static function checkForEmptyInput($params = [])
+    // public static function checkForEmptyInput($params = [])
+    // {
+    //     for ($i = 0; $i < sizeof($params); $i++) {
+    //         if (!isset($params[$i]) or empty($params[$i])) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    public static function checkEmptyInput($params = [])
     {
         for ($i = 0; $i < sizeof($params); $i++) {
-            if (!isset($params) or empty($params)) {
+            if (!isset($params[$i]) || empty($params[$i])) {
                 return true;
             }
+       
+           
         }
-        return false;
+        return false;   
     }
 }

@@ -68,7 +68,7 @@ class User extends Database
 
     public function validation()
     {
-        if (commonFunc::checkForEmptyInput([$this->first_name, $this->middle_name, $this->last_name, $this->date_of_birth, $this->email, $this->skinColor, $this->height, $this->bodyType, $this->phoneNumber])) {
+        if (commonFunc::checkEmptyInput([$this->first_name, $this->middle_name, $this->last_name, $this->date_of_birth, $this->email, $this->skinColor, $this->height, $this->bodyType, $this->phoneNumber])) {
             commonFunc::redirect("../../../views/BIO.php", "msg", "None of this field must be empty");
             exit;
         }
